@@ -28,45 +28,59 @@ body {
 /* Header - Premium Neon Urban */
 .main-header {
     background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-    padding: 60px 0;
+    padding: 30px 0;
     text-align: center;
-    position: relative;
-    z-index: 10;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     border-bottom: 2px solid var(--red);
-    box-shadow: 0 10px 30px rgba(255,51,51,0.2);
 }
 
 .main-logo {
-    width: 150px;
-    height: 150px;
-    border: 4px solid var(--red);
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--red);
     border-radius: 50%;
-    box-shadow: 0 0 30px var(--red);
-    background: var(--black);
-    padding: 10px;
+    box-shadow: 0 0 20px var(--red);
+    margin-bottom: 15px;
 }
 
 .main-title {
     font-family: 'Permanent Marker', cursive;
-    font-size: clamp(2.5rem, 10vw, 4.5rem);
-    text-transform: uppercase;
-    line-height: 1;
-    margin-top: 30px;
+    font-size: 2.2rem;
     color: var(--white);
-    background: rgba(0,0,0,0.8);
-    display: inline-block;
-    padding: 15px 40px;
-    border: 3px solid var(--red);
-    transform: rotate(-1deg);
-    box-shadow: 8px 8px 0 var(--red);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-shadow: 3px 3px 0 var(--black);
 }
 
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--white);
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
 .main-nav {
-    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .main-nav a {
@@ -74,18 +88,15 @@ body {
     text-decoration: none;
     font-weight: 900;
     font-size: 0.9rem;
-    background: var(--black);
-    padding: 12px 25px;
-    border: 2px solid var(--red);
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
     transition: 0.3s;
-    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .main-nav a:hover {
-    background: var(--red);
-    border-color: var(--red);
-    transform: translateY(-3px);
+    color: var(--red);
+    border-bottom-color: var(--red);
 }
 
 /* Hero - Sectioned Background (Tyson) */
@@ -163,80 +174,90 @@ body {
     border-bottom: none;
 }
 
-/* Brands Section */
+/* Brands Section - Symmetric Wall */
 .brands-section {
     background: var(--black);
-    padding: 60px 0;
+    padding: 80px 0;
+    border-top: 1px solid #222;
 }
 
 .brands-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
     align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    justify-items: center;
 }
 
 .brand-logo {
-    height: 50px;
-    width: auto;
-    filter: grayscale(1) brightness(2);
-    opacity: 0.9;
+    width: 100%;
+    max-width: 140px;
+    height: 80px;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #333;
+    transition: 0.3s;
 }
 
-/* Services - Sectioned Background (Rappers Mural) */
+.brand-logo:hover {
+    transform: scale(1.05);
+    border-color: var(--red);
+}
+
+/* Services - Parallax Background */
 #servicios {
-    background: #111;
+    background: #000;
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("../images/grafiti-main.jpg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 120px 0;
+    padding: 100px 0;
 }
 
 .section-title {
     font-family: 'Permanent Marker', cursive;
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    margin-bottom: 60px;
+    font-size: 3rem;
     text-align: center;
+    margin-bottom: 60px;
     color: var(--white);
-    display: table;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     background: var(--black);
-    padding: 10px 30px;
+    padding: 15px 40px;
     border-bottom: 8px solid var(--red);
 }
 
 .services-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .service-item {
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(5px);
+    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    border: 1px solid #333;
+    border-top: 5px solid var(--red);
     color: var(--white);
-    padding: 30px;
-    border-left: 5px solid var(--red);
     transition: 0.3s;
 }
 
 .service-item:hover {
     background: rgba(255,51,51,0.1);
-    transform: translateX(10px);
+    transform: translateY(-10px);
 }
 
 .service-name {
     font-family: 'Anton', sans-serif;
     font-size: 1.8rem;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .service-price {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 900;
     color: var(--yellow);
 }
@@ -355,129 +376,148 @@ body {
     transform: scale(1.1) rotate(-10deg);
 }
 
-/* Mobile Fixes - Final Stable Version */
+/* ==========================================================================
+   MOBILE OVERHAUL - FINAL STABLE VERSION
+   ========================================================================== */
+
 @media (max-width: 768px) {
+    /* Sticky Header & Logo */
     .main-header {
-        padding: 40px 0 20px;
+        padding: 15px 0;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(10px);
     }
 
     .main-logo {
-        width: 100px;
-        height: 100px;
-        box-shadow: 0 0 15px var(--red);
+        width: 80px;
+        height: 80px;
+        margin-bottom: 5px;
     }
 
     .main-title {
-        font-size: 1.8rem;
-        padding: 10px 20px;
-        margin-top: 20px;
-        width: 90%;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
     }
 
+    /* Hamburger Menu Toggle */
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        z-index: 1001;
+    }
+
+    .menu-toggle span {
+        background: var(--red);
+        width: 35px;
+        height: 4px;
+        border-radius: 2px;
+    }
+
+    /* Nav Menu Slide Down */
     .main-nav {
-        margin-top: 20px;
-        gap: 10px;
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #000;
+        padding: 20px 0;
+        border-bottom: 3px solid var(--red);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .main-nav.active {
+        display: flex;
     }
 
     .main-nav a {
-        font-size: 0.7rem;
-        padding: 8px 15px;
-        letter-spacing: 1px;
+        display: block;
+        padding: 15px 0;
+        font-size: 1.2rem;
+        border: none;
+        text-align: center;
     }
 
-    /* Backgrounds on Mobile - Fixed Visibility */
+    /* Parallax Magic for Mobile */
     .hero-street, #servicios, #galeria {
-        background-attachment: scroll !important;
-        background-position: center !important;
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), var(--bg-url) !important;
-    }
-
-    .hero-street { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/tyson-cut.jpg") !important; }
-    #servicios { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/grafiti-main.jpg") !important; }
-    #galeria { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/mural-hiphop.jpg") !important; }
-
-    .hero-street {
+        background-attachment: fixed !important;
+        background-position: center center !important;
         padding: 80px 0;
     }
 
     .hero-headline {
-        font-size: 1.8rem;
-        line-height: 1.2;
-    }
-
-    .highlight {
-        padding: 5px 15px;
-        font-size: 1.5rem;
-    }
-
-    .horarios-header {
         font-size: 2rem;
     }
 
-    .horarios-table {
-        width: 100%;
-        padding: 0 10px;
+    /* Symmetric Sponsors */
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
     }
 
-    .table-row {
-        padding: 12px 15px;
-        font-size: 0.8rem;
+    .brand-logo {
+        height: 70px;
+        max-width: 100%;
+        background: #fff;
+        padding: 10px;
     }
 
-    .section-title {
-        font-size: 1.8rem;
-        padding: 10px 20px;
-        width: 90%;
-    }
-
+    /* Clean Services */
     .services-list {
         grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0 10px;
+        padding: 0 15px;
     }
 
     .service-item {
-        padding: 25px;
-        text-align: left;
+        padding: 30px 20px;
     }
 
     .service-price {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
+    /* Gallery */
     .photo-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 0 10px;
+        gap: 8px;
+        padding: 0 8px;
     }
 
-    .wa-float, .ig-float-simple {
-        bottom: 20px;
-        right: 15px;
+    /* Location & Map Fix */
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 
-    .wa-float {
-        bottom: 85px;
+    .map-wrapper {
+        height: 350px !important;
+        width: 100%;
+        display: block;
     }
 
-    .wa-float img, .ig-float-simple img {
-        width: 50px;
-        height: 50px;
+    .map-wrapper iframe {
+        height: 100% !important;
     }
 
-    /* Brand Logos Mobile Fix */
-    .brand-logo {
-        height: 35px;
-        filter: none;
-        opacity: 1;
+    .contact-info {
+        padding: 40px 15px;
+        text-align: center;
     }
 
-    .brands-grid {
-        gap: 20px;
-        justify-content: space-evenly;
+    .ig-user a {
+        font-size: 1.4rem;
+        word-break: break-all;
+    }
+
+    .address {
+        font-size: 1.2rem;
     }
 }
 
+/* Global Lockdown */
 html, body {
     width: 100%;
     margin: 0;
@@ -492,7 +532,10 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Global scroll fix */
 .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
     overflow: hidden;
 }
