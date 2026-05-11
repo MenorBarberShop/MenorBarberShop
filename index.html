@@ -2,84 +2,144 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-    <meta name="description" content="Barbería Menor — Cortes urbanos, freestyle, barba y estilo de vida en Buenos Aires.">
-    <meta name="keywords" content="barbería, corte, barba, Buenos Aires, barber shop, menor barber, barbero urbano">
-    <meta name="author" content="Barbería Menor">
-    <meta name="google-site-verification" content="googlec2b47f13d6347f5b" />
-
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Barbería Menor</title>
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <title>EL MENOR BARBER SHOP</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Barbería Menor — Estilo de barrio, nivel mundial. Buenos Aires.">
+    <meta name="keywords" content="barbería, corte, barba, Buenos Aires, barber shop">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css?v=15">
 </head>
-<body>
+<body class="urban-theme">
 
-<header id="inicio">
-    <img src="images/logo.jpg" alt="Logo Barbería Menor" class="logo" />
-    <h1>El Menor Barber Shop</h1>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#fotos">Fotos</a>
-        <a href="#contacto">Ubicación</a>
-    </nav>
-</header>
-<section id="servicios" class="section dark">
-    <h2>Servicios</h2>
-    <table class="services-table">
-        <thead>
-            <tr><th>Servicio</th><th>Precio</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Corte</td><td>$17.000</td></tr>
-            <tr><td>Corte y Barba</td><td>$20.000</td></tr>
-			<tr><td>Barba</td><td>$7.000</td></tr>
-        </tbody>
-    </table>
-</section>
-
-
-<section id="horarios" class="section dark">
-    <h2>Horarios</h2>
-    <table class="services-table">
-        <thead>
-            <tr><th>Día</th><th>Horario</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Lunes a Sábado</td><td>11:00 AM - 21:00 PM</td></tr>
-            <tr><td>Domingo</td><td>Cerrado</td></tr>
-        </tbody>
-    </table>
-</section>
-
-
-<section id="fotos" class="section">
-    <h2>Galería</h2>
-    <div class="gallery">
-        <img src="images/corte1.jpg" alt="Corte 1" />
-        <img src="images/corte2.jpg" alt="Corte 2" />
-        <img src="images/corte3.jpg" alt="Corte 3" />
-        <img src="images/corte4.jpg" alt="Corte 4" />
-        <img src="images/corte5.jpg" alt="Corte 5" />
-        <img src="images/corte6.jpg" alt="Corte 6" />
-		<img src="images/corte7.jpg" alt="Corte 7" />
-		<img src="images/corte8.jpg" alt="Corte 8" />
-		<img src="images/corte9.jpg" alt="Corte 9" />
-		<img src="images/corte10.jpg" alt="Corte 10" />
+<header class="main-header">
+    <div class="header-container">
+        <img src="images/logo.jpg" alt="Logo" class="main-logo" />
+        <h1 class="main-title">EL MENOR BARBER SHOP</h1>
+        <nav class="main-nav">
+            <a href="#servicios">SERVICIOS</a>
+            <a href="#galeria">GALERIA</a>
+            <a href="#contacto">UBICACION</a>
+        </nav>
     </div>
-</section>
+</header>
 
-<section id="contacto" class="section dark">
-    <h2>Contacto</h2>
-    <p>Instagram: <a href="https://instagram.com/darky_menor" target="_blank">@darky_menor</a></p>
-    <iframe src="https://www.google.com/maps?q=Avenida+Rivadavia+8591,+Buenos+Aires&output=embed" width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
-</section>
+<main>
+    <section class="hero-street">
+        <div class="hero-mural">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="hero-tag">URBAN STYLE</p>
+                    <h2 class="hero-headline">CULTURA URBANA<br><span class="highlight">EL ESTILO QUE MANDA</span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <p>Menor Barber Shop  — Estilo de barrio, nivel mundial. By Pusho</p>
+    <section class="horarios-section">
+        <div class="container">
+            <div class="horarios-table">
+                <div class="horarios-header">HORARIOS</div>
+                <div class="table-content">
+                    <div class="table-row head">
+                        <span>DÍA</span>
+                        <span>HORARIO</span>
+                    </div>
+                    <div class="table-row">
+                        <span>LUNES A SÁBADO</span>
+                        <span>11:00 AM - 21:00 PM</span>
+                    </div>
+                    <div class="table-row">
+                        <span>DOMINGO</span>
+                        <span>CERRADO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="container">
+            <p class="section-subtitle">PREMIUM EQUIPMENT & CULTURE</p>
+            <div class="brands-grid">
+                <img src="images/patrocinadores/logo-wahl.jpg" alt="Wahl" class="brand-logo" />
+                <img src="images/patrocinadores/logo-andis.jpg" alt="Andis" class="brand-logo" />
+                <img src="images/patrocinadores/logo-babyliss.jpg" alt="BaBylissPRO" class="brand-logo" />
+                <img src="images/patrocinadores/logo-stylecraft.jpg" alt="StyleCraft" class="brand-logo" />
+                <img src="images/patrocinadores/logo-kemei.jpg" alt="Kemei" class="brand-logo" />
+                <img src="images/patrocinadores/logo-l3vel3.png" alt="L3VEL3" class="brand-logo" />
+                <img src="images/patrocinadores/logo-elegance.jpg" alt="Elegance" class="brand-logo" />
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="section">
+        <div class="container">
+            <h2 class="section-title">NUESTROS SERVICIOS</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <span class="service-name">CORTE</span>
+                    <span class="service-price">$17.000</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">CORTE Y BARBA</span>
+                    <span class="service-price">$20.000</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">BARBA</span>
+                    <span class="service-price">$7.000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="section alt-bg">
+        <div class="container">
+            <h2 class="section-title">GALERIA DE CORTES</h2>
+            <div class="photo-grid">
+                <img src="images/corte1.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte2.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte3.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte4.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte5.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte6.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte7.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte8.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte9.jpg" alt="Corte" loading="lazy" />
+                <img src="images/corte10.jpg" alt="Corte" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2 class="section-title">UBICACION</h2>
+            <div class="contact-grid">
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps?q=Avenida+Rivadavia+8591,+Buenos+Aires&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="contact-info">
+                    <p class="ig-user">INSTAGRAM: <a href="https://instagram.com/darky_menor" target="_blank">@darky_menor</a></p>
+                    <p class="address">Av. Rivadavia 8591, Buenos Aires</p>
+                    <p class="horarios-footer">Lunes a Sábado: 11:00 AM - 21:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="main-footer">
+    <div class="container">
+        <p>EL MENOR BARBER SHOP — BY PUSHO</p>
+    </div>
 </footer>
 
-<a href="https://instagram.com/darky_menor" target="_blank" class="ig-float">
+<a href="https://instagram.com/darky_menor" target="_blank" class="ig-float-simple">
     <img src="images/instagram.png" alt="Instagram" />
 </a>
 

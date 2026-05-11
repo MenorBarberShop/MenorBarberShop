@@ -1,211 +1,376 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Russo+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+:root {
+    --black: #000000;
+    --gray: #111;
+    --red: #ff3333;
+    --white: #ffffff;
+    --yellow: #ffcc00;
+}
 
-body {
+* {
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000;
-    color: #fff;
-    scroll-behavior: smooth;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-header {
-    text-align: center;
-    padding: 40px 20px;
-    background: #111;
-}
-
-.logo {
-    width: 180px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.section.dark {
-    background-color: #1e1e1e;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.gallery img {
-    width: 200px;
-    height: auto;
-    border-radius: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    color: #aaa;
-}
-
-.ig-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-}
-
-.ig-float img {
-    width: 50px;
-    height: 50px;
-}
-
-/* Animaciones */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section,
-.gallery img,
-nav a,
-.logo,
-h1 {
-    animation: fadeInUp 1s ease-out both;
-}
-
-h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 48px;
-    color: #fff;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-}
-
-
-h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 48px;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-}
-
-h1 {
-    font-family: 'Bangers', cursive;
-    font-size: 48px;
-    text-shadow: 2px 2px 4px #000;
-    color: #ffffff;
-    margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 28px;
-    }
-}
-
 
 body {
-    background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png'); /* sutil textura urbana */
-    background-color: #0f0f0f;
-    color: #f2f2f2;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
-h1, h2 {
-    font-family: 'Russo One', sans-serif;
-    color: #f2f2f2;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.section {
-    animation: fadeInUp 1s ease-out both;
+/* Header - Premium Neon Urban */
+.main-header {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    border-bottom: 2px solid var(--red);
+    box-shadow: 0 10px 30px rgba(255,51,51,0.2);
 }
 
-.gallery img {
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.main-logo {
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--red);
+    border-radius: 50%;
+    box-shadow: 0 0 30px var(--red);
+    background: var(--black);
+    padding: 10px;
 }
-.gallery img:hover {
-    transform: scale(1.05);
+
+.main-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 30px;
+    color: var(--white);
+    background: rgba(0,0,0,0.8);
+    display: inline-block;
+    padding: 15px 40px;
+    border: 3px solid var(--red);
+    transform: rotate(-1deg);
+    box-shadow: 8px 8px 0 var(--red);
+}
+
+.main-nav {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 0.9rem;
+    background: var(--black);
+    padding: 12px 25px;
+    border: 2px solid var(--red);
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.main-nav a:hover {
+    background: var(--red);
+    border-color: var(--red);
+    transform: translateY(-3px);
+}
+
+/* Hero - Sectioned Background (Tyson) */
+.hero-street {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("../images/tyson-cut.jpg") center/cover fixed;
+    padding: 150px 0;
+    text-align: center;
+    border-bottom: 10px solid var(--red);
+}
+
+.hero-headline {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    text-shadow: 4px 4px 0 var(--black);
+}
+
+.highlight {
+    background: var(--red);
+    color: var(--white);
+    padding: 5px 20px;
+    display: inline-block;
+    transform: rotate(2deg);
+}
+
+/* Horarios Section */
+.horarios-section {
+    padding: 60px 0;
+    background: var(--black);
+}
+
+.horarios-table {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.horarios-header {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.table-content {
+    background: #111;
+    border: 1px solid #333;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    border-bottom: 1px solid #222;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.table-row.head {
+    background: var(--red);
+    color: var(--white);
+    border-bottom: none;
+    font-size: 1.2rem;
+}
+
+.table-row span:last-child {
+    text-align: right;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+/* Brands Section */
+.brands-section {
+    background: var(--black);
+    padding: 60px 0;
+}
+
+.brands-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    height: 50px;
+    width: auto;
+    filter: grayscale(1) brightness(2);
     opacity: 0.9;
 }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Services - Sectioned Background (Rappers Mural) */
+#servicios {
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("../images/grafiti-main.jpg") center/cover fixed;
+    padding: 120px 0;
 }
 
-/* Tabla de servicios */
-.services-table {
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    font-size: 20px;
-    font-family: 'Anton', sans-serif;
-    background-color: #1f1f1f;
-    border-radius: 10px;
-    overflow: hidden;
+.section-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 60px;
+    text-align: center;
+    color: var(--white);
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--black);
+    padding: 10px 30px;
+    border-bottom: 8px solid var(--red);
 }
 
-.services-table th, .services-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #333;
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-.services-table th {
-    background-color: #d72638;
-    color: white;
-    text-transform: uppercase;
-}
-
-.services-table td {
-    color: #eee;
-}
-
-
-nav a {
-    padding: 10px 15px;
-    border: 2px solid #d72638;
-    border-radius: 8px;
-    margin: 5px;
-    text-decoration: none;
+.service-item {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(5px);
+    color: var(--white);
+    padding: 30px;
+    border-left: 5px solid var(--red);
     transition: 0.3s;
-    display: inline-block;
 }
 
-nav a:hover {
-    background-color: #d72638;
-    color: #ffffff;
+.service-item:hover {
+    background: rgba(255,51,51,0.1);
+    transform: translateX(10px);
+}
+
+.service-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.service-price {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--yellow);
+}
+
+/* Gallery - Sectioned Background (HipHop Mural) */
+#galeria {
+    background: linear-gradient(rgba(255,51,51,0.05), rgba(0,0,0,0.9)), url("../images/mural-hiphop.jpg") center/cover fixed;
+    padding: 100px 0;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.photo-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 2px solid var(--white);
+    transition: 0.3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    border-color: var(--red);
+    box-shadow: 0 0 20px var(--red);
+}
+
+/* Contact */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--black);
+    border-top: 5px solid var(--red);
+}
+
+.map-wrapper {
+    filter: grayscale(1) invert(1);
+    height: 400px;
+}
+
+.contact-info {
+    padding: 50px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.ig-user a {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    color: var(--red);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.address {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Footer */
+.main-footer {
+    padding: 50px;
+    text-align: center;
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--gray);
+}
+
+/* Floating IG */
+.ig-float-simple {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.ig-float-simple img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 15px var(--red));
+}
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .main-header {
+        padding: 30px 0;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+        padding: 8px 15px;
+    }
+
+    .hero-street {
+        padding: 80px 0;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        padding: 8px 20px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item {
+        padding: 20px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-wrapper {
+        height: 250px;
+    }
+
+    .ig-user a {
+        font-size: 1.8rem;
+    }
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    max-width: 100%;
 }
