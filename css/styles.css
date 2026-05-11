@@ -90,7 +90,11 @@ body {
 
 /* Hero - Sectioned Background (Tyson) */
 .hero-street {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("../images/tyson-cut.jpg") center/cover fixed;
+    background: #111;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("../images/tyson-cut.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 150px 0;
     text-align: center;
     border-bottom: 10px solid var(--red);
@@ -182,7 +186,11 @@ body {
 
 /* Services - Sectioned Background (Rappers Mural) */
 #servicios {
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url("../images/grafiti-main.jpg") center/cover fixed;
+    background: #111;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("../images/grafiti-main.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 120px 0;
 }
 
@@ -235,7 +243,11 @@ body {
 
 /* Gallery - Sectioned Background (HipHop Mural) */
 #galeria {
-    background: linear-gradient(rgba(255,51,51,0.05), rgba(0,0,0,0.9)), url("../images/mural-hiphop.jpg") center/cover fixed;
+    background: #111;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url("../images/mural-hiphop.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 100px 0;
 }
 
@@ -317,54 +329,152 @@ body {
     width: 60px;
     height: 60px;
     filter: drop-shadow(0 0 15px var(--red));
+    transition: 0.3s;
 }
 
-/* Mobile Fixes */
+.ig-float-simple:hover img {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* WhatsApp Float */
+.wa-float {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    z-index: 100;
+}
+
+.wa-float img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 15px #25D366);
+    transition: 0.3s;
+}
+
+.wa-float:hover img {
+    transform: scale(1.1) rotate(-10deg);
+}
+
+/* Mobile Fixes - Final Stable Version */
 @media (max-width: 768px) {
     .main-header {
-        padding: 30px 0;
+        padding: 40px 0 20px;
+    }
+
+    .main-logo {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 0 15px var(--red);
     }
 
     .main-title {
-        font-size: 2.2rem;
-        padding: 8px 15px;
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        margin-top: 20px;
+        width: 90%;
     }
 
+    .main-nav {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+        letter-spacing: 1px;
+    }
+
+    /* Backgrounds on Mobile - Fixed Visibility */
     .hero-street, #servicios, #galeria {
         background-attachment: scroll !important;
+        background-position: center !important;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), var(--bg-url) !important;
     }
+
+    .hero-street { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/tyson-cut.jpg") !important; }
+    #servicios { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/grafiti-main.jpg") !important; }
+    #galeria { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("../images/mural-hiphop.jpg") !important; }
 
     .hero-street {
         padding: 80px 0;
     }
 
     .hero-headline {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .highlight {
+        padding: 5px 15px;
+        font-size: 1.5rem;
+    }
+
+    .horarios-header {
         font-size: 2rem;
     }
 
+    .horarios-table {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .table-row {
+        padding: 12px 15px;
+        font-size: 0.8rem;
+    }
+
     .section-title {
-        font-size: 2.2rem;
-        padding: 8px 20px;
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        width: 90%;
     }
 
     .services-list {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 10px;
     }
 
     .service-item {
-        padding: 20px;
+        padding: 25px;
+        text-align: left;
     }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .map-wrapper {
-        height: 250px;
-    }
-
-    .ig-user a {
+    .service-price {
         font-size: 1.8rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .wa-float, .ig-float-simple {
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .wa-float {
+        bottom: 85px;
+    }
+
+    .wa-float img, .ig-float-simple img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Brand Logos Mobile Fix */
+    .brand-logo {
+        height: 35px;
+        filter: none;
+        opacity: 1;
+    }
+
+    .brands-grid {
+        gap: 20px;
+        justify-content: space-evenly;
     }
 }
 
@@ -373,8 +483,16 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    position: relative;
+    background-color: var(--black);
 }
 
 * {
     max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Global scroll fix */
+.container {
+    overflow: hidden;
 }
