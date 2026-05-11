@@ -330,6 +330,10 @@ body {
         padding: 8px 15px;
     }
 
+    .hero-street, #servicios, #galeria {
+        background-attachment: scroll !important;
+    }
+
     .hero-street {
         padding: 80px 0;
     }
