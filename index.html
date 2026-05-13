@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/styles.css?v=18">
+    <link rel="stylesheet" href="css/styles.css?v=22">
 </head>
 <body class="urban-theme">
 
@@ -41,12 +41,10 @@
 
 <main>
     <section class="hero-street">
-        <div class="hero-mural">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-tag">URBAN STYLE</p>
-                    <h2 class="hero-headline">CULTURA URBANA<br><span class="highlight">EL ESTILO QUE MANDA</span></h2>
-                </div>
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-tag">URBAN STYLE</p>
+                <h2 class="hero-headline">CULTURA URBANA<br><span class="highlight">EL ESTILO QUE MANDA</span></h2>
             </div>
         </div>
     </section>
@@ -72,6 +70,7 @@
             </div>
         </div>
     </section>
+    <section class="brands-section">
         <div class="container">
             <p class="section-subtitle">PREMIUM EQUIPMENT & CULTURE</p>
             <div class="brands-grid">
@@ -106,7 +105,7 @@
         </div>
     </section>
 
-    <section id="galeria" class="section alt-bg">
+    <section id="galeria" class="section">
         <div class="container">
             <h2 class="section-title">GALERIA DE CORTES</h2>
             <div class="photo-grid">
@@ -165,6 +164,47 @@
             toggle.classList.remove('active');
         });
     });
+
+    // Mobile parallax fallback: simulates fixed background feel on phones.
+    (function setupMobileParallax() {
+        const sections = ['.hero-street', '#servicios', '#galeria']
+            .map((selector) => document.querySelector(selector))
+            .filter(Boolean);
+
+        if (!sections.length) return;
+
+        const mq = window.matchMedia('(max-width: 768px)');
+        let ticking = false;
+
+        const updateParallax = () => {
+            ticking = false;
+            if (!mq.matches) {
+                sections.forEach((el) => el.style.removeProperty('--parallax-offset'));
+                return;
+            }
+
+            const viewportCenter = window.innerHeight * 0.5;
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const sectionCenter = rect.top + rect.height * 0.5;
+                const distance = sectionCenter - viewportCenter;
+                const offset = Math.max(-45, Math.min(45, distance * -0.08));
+                section.style.setProperty('--parallax-offset', `${offset.toFixed(1)}px`);
+            });
+        };
+
+        const requestUpdate = () => {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(updateParallax);
+        };
+
+        window.addEventListener('scroll', requestUpdate, { passive: true });
+        window.addEventListener('resize', requestUpdate);
+        if (mq.addEventListener) mq.addEventListener('change', requestUpdate);
+        else mq.addListener(requestUpdate);
+        requestUpdate();
+    })();
 </script>
 
 </body>
